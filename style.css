@@ -17,3 +17,19 @@ button {
     padding: 10px;
     border: 2px solid black; 
 }
+
+#links {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#github {
+    height: 30px;
+    width: 30px;
+}
+
+#coffee {
+    height: 30px;
+    width: 108px;
+}

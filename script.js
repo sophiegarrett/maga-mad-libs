@@ -30,13 +30,14 @@ function generate() {
 }
 
 function pickRandom(type) {
-    let single_perpetrators = ["Kamala", "Joe Biden", "Hunter Biden", "Antifa", "Big Pharma", "ISIS"];
-    let plural_perpetrators = ["They", "The woke liberals", "Leftist anarchists", "Illegal aliens", "The elites", "Terrorists", "Drug cartels"];
+    let single_perpetrators = ["Kamala", "Joe Biden", "Hunter Biden", "Antifa", "Big Pharma", "ISIS", "The fake news media"];
+    let plural_perpetrators = ["They", "The woke liberals", "Leftist anarchists", "Illegal aliens", "The elites", "The coastal elites", "Terrorists", "Drug cartels", 
+        "The people in Washington"];
     let transitive_verb_phrases = ["teaching gender ideology to", "doing transgender surgeries on", "performing abortions on", "castrating"];
-    let intransitive_verb_phrases = ["coming over the border", "eating the cats", "eating the dogs", "taking our guns", "CHEATING"];
+    let intransitive_verb_phrases = ["coming over the border", "eating the cats", "eating the dogs", "taking our guns", "CHEATING", "selling drugs", "killing babies"];
     let targets = ["our children", "unborn children", "prisoners", "Hannibal Lecter", "Hunter Biden's laptop", "Hillary's emails"];
     let big_bads = ["gender ideology", "terrorism", "abortion", "pronouns", "neopronouns", "deepfakes", "voter fraud", "fake news", "vaccines"];
-    let adjectives = ["nonbinary", "terrorist", "woke", "AI", "illegal", "fake", "groomer"];
+    let adjectives = ["nonbinary", "terrorist", "woke", "AI", "illegal", "fake", "groomer", "transgender"];
     let locations = ["our country", "our schools", "women's sports", "Mexico", "America"];
 
     if (type == "perpetrator") {
