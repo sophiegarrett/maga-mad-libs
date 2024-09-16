@@ -4,9 +4,44 @@ function displayQuote() {
 }
 
 function generate() {
-    const quotes = ["Test1", "hi!", "This is a test!!!"];
+    let quote = "";
+    let template = Math.floor(Math.random() * 3);
 
-    let quote = quotes[Math.floor(Math.random() * quotes.length)];
+    switch(template) {
+        case 0:
+            quote = pickRandom("scapegoat");
+            break;
+
+        case 1:
+            quote = "lol";
+            break;
+
+        case 2:
+            quote = "gahahah";
+            break;
+        
+        default:
+            quote = "error: invalid template";
+            break;
+    }
 
     return quote;
+}
+
+function pickRandom(type) {
+    let scapegoats = ["1", "2", "3"];
+
+    let returnString = "";
+
+    switch(type) {
+        case "scapegoat":
+            returnString = scapegoats[Math.floor(Math.random() * scapegoats.length)];
+            break;
+
+        default:
+            returnString = "error: invalid type";
+            break;
+    }
+
+    return returnString;
 }
