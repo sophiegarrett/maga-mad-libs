@@ -9,15 +9,16 @@ function generate() {
 
     switch(template) {
         case 0:
-            quote = pickRandom("scapegoat");
+            quote = pickRandom("perpetrator") + pickRandom("intransitive") + " and " + pickRandom("transitive") + " " + pickRandom("target") + "!";
             break;
 
         case 1:
-            quote = "lol";
+            quote = pickRandom("perpetrator") + "bringing " + pickRandom("adjective") + " " + pickRandom("big_bad") + " and " + pickRandom("adjective") 
+                + " " + pickRandom("big_bad") + " into " + pickRandom("location") + "!";
             break;
 
         case 2:
-            quote = "gahahah";
+            quote = pickRandom("perpetrator") + pickRandom("transitive") + " " + pickRandom("target") + " and " + pickRandom("intransitive") + " in " + pickRandom("location") + "!";
             break;
         
         default:
@@ -29,13 +30,57 @@ function generate() {
 }
 
 function pickRandom(type) {
-    let scapegoats = ["1", "2", "3"];
+    let single_perpetrators = ["Kamala", "Joe Biden", "Hunter Biden", "Antifa", "Big Pharma", "ISIS"];
+    let plural_perpetrators = ["They", "The woke liberals", "Leftist anarchists", "Illegal aliens", "The elites", "Terrorists", "Drug cartels"];
+    let transitive_verb_phrases = ["teaching gender ideology to", "doing transgender surgeries on", "performing abortions on", "castrating"];
+    let intransitive_verb_phrases = ["coming over the border", "eating the cats", "eating the dogs", "taking our guns", "CHEATING"];
+    let targets = ["our children", "unborn children", "prisoners", "Hannibal Lecter", "Hunter Biden's laptop", "Hillary's emails"];
+    let big_bads = ["gender ideology", "terrorism", "abortion", "pronouns", "neopronouns", "deepfakes", "voter fraud", "fake news", "vaccines"];
+    let adjectives = ["nonbinary", "terrorist", "woke", "AI", "illegal", "fake", "groomer"];
+    let locations = ["our country", "our schools", "women's sports", "Mexico", "America"];
+
+    if (type == "perpetrator") {
+        if (Math.floor(Math.random() * 2) == 0) {
+            type = "single_perpetrator";
+        }
+        else {
+            type = "plural_perpetrator";
+        }
+    }
 
     let returnString = "";
 
     switch(type) {
-        case "scapegoat":
-            returnString = scapegoats[Math.floor(Math.random() * scapegoats.length)];
+        case "single_perpetrator":
+            returnString = single_perpetrators[Math.floor(Math.random() * single_perpetrators.length)] + " is ";
+            break;
+        
+        case "plural_perpetrator":
+            returnString = plural_perpetrators[Math.floor(Math.random() * plural_perpetrators.length)] + " are ";
+            break;
+
+        case "transitive":
+            returnString = transitive_verb_phrases[Math.floor(Math.random() * transitive_verb_phrases.length)];
+            break;
+
+        case "intransitive":
+            returnString = intransitive_verb_phrases[Math.floor(Math.random() * intransitive_verb_phrases.length)];
+            break;
+
+        case "target":
+            returnString = targets[Math.floor(Math.random() * targets.length)];
+            break;
+
+        case "big_bad":
+            returnString = big_bads[Math.floor(Math.random() * big_bads.length)];
+            break;
+
+        case "adjective":
+            returnString = adjectives[Math.floor(Math.random() * adjectives.length)];
+            break;
+
+        case "location":
+            returnString = locations[Math.floor(Math.random() * locations.length)];
             break;
 
         default:
