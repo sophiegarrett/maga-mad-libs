@@ -1,8 +1,28 @@
+// Generates and displays quote
+// Activates when user clicks the "Generate" button
 function displayQuote() {
     const quoteElement = document.getElementById("quote");
     quoteElement.textContent = generate();
 }
 
+// Share button implemented using the Web Share API
+function share() {
+    if (navigator.share) {
+        const shareData = {
+            title: "Woke Mad Libs - Trump Quote Generator",
+            url: document.location.href,
+            text: "hi!"
+        }
+        if (navigator.canShare(shareData)) {
+            navigator.share(shareData);
+        }
+    }
+    else {
+
+    }
+}
+
+// Generates a quote
 function generate() {
     let quote = "";
     let template = Math.floor(Math.random() * 3);
@@ -29,6 +49,7 @@ function generate() {
     return quote;
 }
 
+// Picks a random string from a specified array
 function pickRandom(type) {
     let single_perpetrators = ["Kamala", "Joe Biden", "Hunter Biden", "Antifa", "Big Pharma", "ISIS", "The fake news media"];
     let plural_perpetrators = ["They", "The woke liberals", "Leftist anarchists", "Illegal aliens", "The elites", "The coastal elites", "Terrorists", "Drug cartels", 
