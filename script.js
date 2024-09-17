@@ -7,14 +7,19 @@ function displayQuote() {
 
 // Share button implemented using the Web Share API
 function share() {
+    const quoteElement = document.getElementById("quote");
+    let quote = quoteElement.textContent;
+
     if (navigator.share) {
         const shareData = {
-            title: "Woke Mad Libs - Trump Quote Generator",
+            title: document.title,
             url: document.location.href,
-            text: "hi!"
+            text: quote
         }
         if (navigator.canShare(shareData)) {
-            navigator.share(shareData);
+            navigator.share(shareData)
+            .then(() => console.log("Shared successfully!"))
+            .catch((error) => console.error("Sharing failed: ", error));
         }
     }
     else {
