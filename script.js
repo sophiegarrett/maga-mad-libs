@@ -14,7 +14,7 @@ function share() {
         const shareData = {
             title: document.title,
             url: document.location.href,
-            text: quote + "test"
+            text: quote
         }
         if (navigator.canShare(shareData)) {
             navigator.share(shareData)
